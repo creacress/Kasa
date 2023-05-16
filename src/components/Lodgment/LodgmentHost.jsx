@@ -1,5 +1,5 @@
 import React from "react";
-
+// Permet d'afficher le nom de l'hote //
 function LodgmentsHost(props) {
   return (
     <div className="host">

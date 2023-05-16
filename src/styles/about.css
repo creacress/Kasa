@@ -17,3 +17,8 @@
     margin: 64px auto;
   }
 }
+
+.dropdown_container:active {
+
+  transition-duration: 1.2s;
+}

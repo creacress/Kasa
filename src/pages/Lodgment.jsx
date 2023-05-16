@@ -16,7 +16,7 @@ function Lodgment() {
   useEffect(() => {
     axios.get("../hotels.json").then((res) => setData(res.data));
   }, []);
-
+// Récuperation des logements sinon error ../
   const lodgmentId = window.location.pathname.substring(10);
   const lodgment = data.find((item) => item.id === lodgmentId);
   if (!lodgment) return <Error />;
