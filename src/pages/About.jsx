@@ -12,9 +12,13 @@ function About() {
       <main>
         <Banner origin="about" />
         <section className="dropdown">
+          {
+          // voici un commentaire
+          }
           {aboutCollapse.map((text, idx) => {
             return (
               <Collapse
+              
                 title={text.title}
                 key={idx}
                 description={text.description}

@@ -13,6 +13,12 @@ function Slideshow(props) {
   const arrayLenght = props.pictures.flatMap(el => el.pictures).length;
 // Première image sans click //
   function prevSlide() {
+
+   
+    
+      <ArrowLeft className={() => (arrayLenght >= 1 ? "arrowNoDisplay" : "")}/>
+    
+   
     let newSlide = currentSlide === 0 ? arrayLenght - 1 : currentSlide - 1;
     setCurrentSlide(newSlide);
   }

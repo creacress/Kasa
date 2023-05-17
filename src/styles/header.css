@@ -31,13 +31,20 @@ header {
   color: #ff6060;
   margin-left: 55px;
 }
+.nav_link a:hover {
+  color: #ff6060;
+  border-bottom: 3px solid #ff6060;
+  
+  
+}
+
 
 .nav_active {
   position: relative;
 }
 
-.nav_active::after {
-  content: "";
+/* .nav_active::after {
+   content: "";
   height: 2px;
   width: 0;
   background: #ff6060;
@@ -47,7 +54,8 @@ header {
   left: 50%;
   transform: translateX(-50%);
   animation: anim 0.6s ease forwards;
-}
+} */
+
 
 /* Keyframes */
 @keyframes anim {
