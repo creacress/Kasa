@@ -34,16 +34,16 @@ function Slideshow(props) {
   return (
     // Création de la section qui accueillera les slides
     <section className="slideshow_container">
-      <div className="slideshow_navigation">
-        <ArrowLeft className={() => (arrayLength <= 1 ? "arrow_hidden" : "")} onClick={() => prevSlide()} />
-        <ArrowRight className={() => (arrayLength <= 1 ? "arrow_hidden" : "")} onClick={() => nextSlide()} />
+      <div className={arrayLength <= 1 ? "arrow_hidden slideshow_navigation" : "slideshow_navigation"}>
+        <ArrowLeft onClick={() => prevSlide()} />
+        <ArrowRight onClick={() => nextSlide()} />
       </div>
       <img
         src={currentPicture}
         alt=""
         className="slideshow_img"
       />
-      <div className="slideshow_text">
+      <div className={arrayLength <= 1 ? "arrow_hidden slideshow_text" : "slideshow_text"}>
         {currentSlide + 1}/{arrayLength}
       </div>
     </section>
