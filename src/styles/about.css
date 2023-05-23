@@ -12,7 +12,7 @@
 
 /* MediaQueries */
 
-@media all and (max-width: 812px) {
+@media all and (max-width: 767px) {
   .dropdown {
     margin: 64px auto;
   }

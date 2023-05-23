@@ -6,51 +6,49 @@ import { useState } from "react";
 import { ReactComponent as ArrowLeft } from "./arrowleft.svg";
 import { ReactComponent as ArrowRight } from "./arrowright.svg";
 
+   
 // Composant Slideshow : affiche un carrousel d'images
 function Slideshow(props) {
-  // Actuelle slide
+  // Slide actuelle
   const [currentSlide, setCurrentSlide] = useState(0);
-  //Calcule longueur totale de 'pictures' en extrayant la propriété 'pictures' de chaque élément du tableau 'props.pictures'
+  // Calcule longueur totale de 'pictures' en extrayant la propriété 'pictures' de chaque élément du tableau 'props.pictures'
   const arrayLength = props.pictures.flatMap((el) => el.pictures).length;
-
+ 
   // Fonction pour passer à la slide précédente
   function prevSlide() {
-    // Affiche la flèche gauche seulement si arrayLength est supérieur ou égal à 1
-    <ArrowLeft className={() => (arrayLength >= 1 ? "arrowNoDisplay" : "")}/>;
-    
     let newSlide = currentSlide === 0 ? arrayLength - 1 : currentSlide - 1;
     setCurrentSlide(newSlide);
+     
   }
 
   // Fonction pour passer à la slide suivante
   function nextSlide() {
-    // Si currentSlide est égal à arrayLength moins 1, passe à la première slide (0)
     let newSlide = currentSlide === arrayLength - 1 ? 0 : currentSlide + 1;
     setCurrentSlide(newSlide);
+    
   }
+
+  // Accède directement à l'élément correspondant dans le tableau props.pictures
+  const currentPicture = props.pictures[currentSlide];
 
   return (
     // Création de la section qui accueillera les slides
     <section className="slideshow_container">
-      <div className="slideshow_navigation"> 
-        <ArrowLeft className="arrow" onClick={() => prevSlide()} />
-        <ArrowRight className="arrow" onClick={() => nextSlide()} />
+      <div className="slideshow_navigation">
+        <ArrowLeft className={() => (arrayLength <= 1 ? "arrow_hidden" : "")} onClick={() => prevSlide()} />
+        <ArrowRight className={() => (arrayLength <= 1 ? "arrow_hidden" : "")} onClick={() => nextSlide()} />
       </div>
-      {props.pictures.map((picture, index) => {
-        return (
-          <img
-            src={picture}
-            alt=""
-            key={index}
-            className={index === currentSlide ? "slideshow_img" : "hide_img"}
-          />
-        );
-      })}
+      <img
+        src={currentPicture}
+        alt=""
+        className="slideshow_img"
+      />
       <div className="slideshow_text">
-        {currentSlide + 1}/{props.pictures.length}
+        {currentSlide + 1}/{arrayLength}
       </div>
     </section>
   );
 }
+
 
 export default Slideshow;

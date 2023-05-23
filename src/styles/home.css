@@ -16,7 +16,7 @@ ul {
 /* Banner Body */
 .banner_home {
   margin: 63px auto 0 auto;
-  width: 90%;
+  width: 80%;
   height: 223px;
   border-radius: 25px;
 
@@ -46,7 +46,7 @@ ul {
   flex-wrap: wrap;
   border-radius: 25px;
   background-color: #f6f6f6;
-  width: 90%;
+  width: 80%;
   margin: 43px auto 50px auto;
   padding: 3% 1% 0;
 }
@@ -96,7 +96,7 @@ ul {
 }
 
 /* Media Queries */
-@media all and (max-width: 812px) {
+@media all and (max-width: 767px) {
   /* Banner */
   .banner_home {
     height: 111px;

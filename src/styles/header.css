@@ -6,7 +6,7 @@ header {
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -37,13 +37,20 @@ header {
   
   
 }
+.nav_link a.nav_active:hover {
+  /* styles spécifiques pour désactiver le hover */
+  pointer-events: none;
+  cursor: default;
+  /* autres styles si nécessaire */
+}
+
 
 
 .nav_active {
   position: relative;
 }
 
-/* .nav_active::after {
+.nav_active::after {
    content: "";
   height: 2px;
   width: 0;
@@ -54,7 +61,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   animation: anim 0.6s ease forwards;
-} */
+} 
 
 
 /* Keyframes */
@@ -65,7 +72,7 @@ header {
 }
 
 /* MediaQueries */
-@media all and (max-width: 812px) {
+@media all and (max-width: 767px) {
   header {
     margin: 20px 20px;
   }

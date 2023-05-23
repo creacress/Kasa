@@ -3,7 +3,7 @@
   margin: 20px auto;
   position: relative;
   height: 490px;
-  width: 95%;
+  width: 93%;
 }
 .slideshow_navigation {
   margin: 0;
@@ -41,6 +41,9 @@
 }
 .hide_img {
   display: none;
+}
+.arrow_hidden {
+  visibility: hidden;
 }
 .slideshow_text {
   position: absolute;
@@ -130,7 +133,7 @@
 
 /* MediaQueries */
 
-@media all and (max-width: 812px) {
+@media all and (max-width: 767px) {
   .slideshow_container {
     height: 255px;
   }
