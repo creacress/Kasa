@@ -1,5 +1,7 @@
+// Import de React
 import React from "react";
-// Permet d'afficher le nom de l'hote //
+
+// Composant LodgmentsHost : affiche le nom de l'hôte et son image
 function LodgmentsHost(props) {
   return (
     <div className="host">

@@ -1,5 +1,7 @@
+// Import de React
 import React from "react";
 
+// Composant lodgmentTitle : affiche le titre et l'emplacement d'un hébergement
 function lodgmentTitle(props) {
   return (
     <div>
