@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 124rem;
+  max-width: 1440px;
   font-family: "Montserrat";
 }
 
@@ -15,7 +15,7 @@ ul {
 
 /* Banner Body */
 .banner_home {
-  margin: 63px auto 0 auto;
+  margin: auto;
   width: 80%;
   height: 223px;
   border-radius: 25px;
@@ -99,11 +99,13 @@ ul {
 @media all and (max-width: 767px) {
   /* Banner */
   .banner_home {
-    height: 111px;
     background-size: cover;
     border-radius: 10px;
     justify-content: flex-start;
     background-position: center;
+    margin: auto;
+    width: 90%;
+    height: 111px;
   }
   .banner_home h2 {
     margin-left: 16px;
@@ -116,6 +118,9 @@ ul {
   .cards {
     justify-content: center;
     background-color: #fff;
+    width: 95%;
+    margin: auto;
+    
   }
   .card_thumb {
     width: 100%;
