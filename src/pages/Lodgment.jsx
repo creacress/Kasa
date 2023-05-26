@@ -23,17 +23,35 @@ import LodgmentTitle from "../components/Lodgment/LodgmentTitle";
 
 // Composant Lodgment : représente une page d'hébergement spécifique
 function Lodgment() {
-  // Déclaration d'un état pour stocker les données de l'hébergement
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  // Utilisation de useEffect pour effectuer une requête HTTP et mettre à jour les données de l'hébergement
+  const lodgmentId = window.location.pathname.substring(10);
+
   useEffect(() => {
-    axios.get("../hotels.json").then((res) => setData(res.data));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("../hotels.json");
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        setError(true);
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  // Récupération de l'ID de l'hébergement à partir de l'URL
-  const lodgmentId = window.location.pathname.substring(10);
-  // Recherche de l'hébergement correspondant à l'ID dans les données
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <Error />;
+  }
+
   const lodgment = data.find((item) => item.id === lodgmentId);
   // Si aucun hébergement correspondant n'est trouvé, affichage du composant Error
   if (!lodgment) return <Error />;
